@@ -52,3 +52,49 @@ console.log(sortMaker('shahin'));
 console.log(sortMaker([4,2]));
 console.log(sortMaker([4,-5]));
 console.log(sortMaker([4,0]));
+
+console.log('====================');
+
+// write a function that will take an object as a input. and that object contain 3 property.
+// return the value of the object
+// If the object have any missing property then repleace the missing place using double underscore.
+function findAddress(object){
+    const street = object.street || '__';
+    const house = object.house || '__';
+    const socaity = object.socaity || '__';
+    return street + ',' + house + ',' + socaity;
+
+}
+const myObject = {
+    street: 10,
+    // house: '15A',
+    socaity: 'Earth perfect'
+}
+console.log(findAddress(myObject));
+
+console.log('====================');
+
+
+// write a function what will take 2 input one is array another is number.
+// array input every element is a note of money.
+// number input is amount of TK
+// if the array sum are equal and grater the the Tk then you can buy the product and return true. or else return flase.
+// ckeck is the first input array is empty or not. If empty then return a meaningfull message.
+function canPay(array, number){
+    if(array == []){
+        return 'You dont have any money to pay.'
+    }
+    let total = 0;
+    for(let element of array){
+        total += element;
+    }
+    if(number <= total){
+        return true;
+    }
+    return false;
+}
+const myArr = [1,2,5];
+const myNumber = 10;
+console.log(canPay(myArr,myNumber));
+console.log(canPay([1,5,5],10));
+console.log(canPay([],10));
